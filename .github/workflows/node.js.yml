@@ -29,7 +29,8 @@ jobs:
       - run: npm run build --if-present
       - name: Commit files # transfer the new html files back into the repository
         run: |
-          git config --local user.name ${{ github.actor }}
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git config advice.addIgnoredFile false
           git add -f ./dist
           git commit --allow-empty -m "Updating the repository in the dist folder"
@@ -39,3 +40,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
     #- run: npm test
+    # git config --local user.name ${{ github.actor }}
