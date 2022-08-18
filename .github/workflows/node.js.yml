@@ -30,7 +30,7 @@ jobs:
       - name: Commit files # transfer the new html files back into the repository
         run: |
           git config advice.addIgnoredFile false
-          git add ./dist
+          git add -f ./dist
           git commit -m "Updating the repository in the dist folder"
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
