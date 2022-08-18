@@ -1,18 +1,12 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { AfterViewInit, Component, Input, OnChanges } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-test[num]',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss'],
 })
-export class TestComponent implements OnInit, OnChanges, AfterViewInit {
+export class TestComponent implements OnChanges, AfterViewInit {
   @Input()
   a: number | undefined;
 
@@ -25,9 +19,7 @@ export class TestComponent implements OnInit, OnChanges, AfterViewInit {
   @Input()
   num!: number | undefined;
 
-  f = new UntypedFormControl('');
-
-  ngOnInit(): void {}
+  f = new FormControl('');
 
   ngAfterViewInit(): void {
     console.log({ a: this.a, b: this.b, c: this.c });

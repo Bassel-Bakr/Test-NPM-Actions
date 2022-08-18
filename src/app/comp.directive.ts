@@ -1,8 +1,7 @@
-import { TestComponent } from './test/test.component';
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[dsada]',
+  selector: '[appDsada]',
 })
 export class CompDirective {
   constructor() {
