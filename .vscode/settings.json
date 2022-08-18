@@ -1,0 +1,8 @@
+{
+  "liveServer.settings.multiRootWorkspaceName": "ng-app",
+  "liveServer.settings.port": 5501,
+  "files.exclude": {
+    "src/app/other": true
+  },
+  "workspace.isHidden": true
+}
