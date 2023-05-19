@@ -28,9 +28,9 @@ jobs:
         uses: actions/cache@v3.3.1
         with:
           path: ./node_modules
-          key: node-cache-${{ hashFiles('**/package-lock.json') }}
+          key: cached-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            node-cache-
+            cached-node-modules-
       - run: npm install
       - run: npm run build --if-present
       - name: Commit files # transfer the new html files back into the repository
