@@ -27,7 +27,7 @@ jobs:
         id: cache-nodemodules
         uses: actions/cache@v3.3.1
         with:
-          path: ./NewPowerAngular/node_modules
+          path: ./node_modules
           key: cached-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             cached-node-modules-
