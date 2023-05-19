@@ -23,6 +23,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3.3.1
+        with:
+          path: ./NewPowerAngular/node_modules
+          key: cached-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cached-node-modules-
       - run: npm install
       - run: npm run build --if-present
       - name: Commit files # transfer the new html files back into the repository
